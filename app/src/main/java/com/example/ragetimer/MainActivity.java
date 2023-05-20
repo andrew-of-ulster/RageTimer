@@ -24,9 +24,11 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
-                new CountDownTimer(30000, 1000){
+                int totalTime=30000;
+                int interval=1000;
+                new CountDownTimer(totalTime, interval){
                     public void onTick(long millisUntilFinished){
-                        textView.setText(String.valueOf(counter));
+                        textView.setText(String.valueOf((totalTime/1000)-counter));
                         counter++;
                     }
                     public  void onFinish(){

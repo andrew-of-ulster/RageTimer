@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#232b2b"
     tools:context=".MainActivity">
 
 
@@ -21,6 +22,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="?"
+            android:textColor="#008000"
             android:textSize="200dp"
             app:fontFamily="@font/digital"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -35,6 +37,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text=":"
+            android:textColor="#008000"
             android:textSize="200dp"
             app:fontFamily="@font/digital"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -49,6 +52,7 @@
             android:gravity="center"
             android:text="?"
             android:textSize="200dp"
+            android:textColor="#008000"
             app:fontFamily="@font/digital"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

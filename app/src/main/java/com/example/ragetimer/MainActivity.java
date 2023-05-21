@@ -15,10 +15,8 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     TextView minsRemaining;
     TextView secsRemaining;
-
-    private ProgressBar mProgressBar;
-
-
+    TextView colon;
+    ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         button= (Button) findViewById(R.id.button);
         minsRemaining= (TextView) findViewById(R.id.textMins);
         secsRemaining= (TextView) findViewById(R.id.textSecs);
+        colon= (TextView) findViewById(R.id.colon);
+
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -57,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
                             displayNum = "0" + displayNum;
                         }
                         secsRemaining.setText(displayNum);
+
+                        if(remainingSeconds<60){
+                            minsRemaining.setTextColor(0xAAe4000f);
+                            secsRemaining.setTextColor(0xAAe4000f);
+                            colon.setTextColor(0xAAe4000f);
+                        }
+
                         counter++;
                     }
                     public  void onFinish(){

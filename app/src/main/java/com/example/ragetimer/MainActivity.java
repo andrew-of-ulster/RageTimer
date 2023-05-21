@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 button.setVisibility(View.INVISIBLE);
                 counter=0;
                 int totalTime=1800000;
-                 totalTime=61000;
+                 totalTime=69000;
                 int interval=1000;
                 int totalSecs = totalTime/interval;
                 mProgressBar.setMax(totalSecs);

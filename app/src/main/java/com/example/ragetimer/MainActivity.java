@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     TextView colon;
     ProgressBar mProgressBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

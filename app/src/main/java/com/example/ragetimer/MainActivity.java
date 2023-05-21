@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
         button= (ImageButton) findViewById(R.id.button);
@@ -35,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
             public void onClick(View v) {
+                minsRemaining.setTextColor(0xAA008000);
+                secsRemaining.setTextColor(0xAA008000);
+                colon.setTextColor(0xAA008000);
+                mProgressBar.setProgressDrawable(getResources().getDrawable(R.drawable.custom_progressbar));
+
+                button.setVisibility(View.INVISIBLE);
                 counter=0;
                 int totalTime=1800000;
                  totalTime=61000;
@@ -73,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         minsRemaining.setText("£");
                         secsRemaining.setText("£");
                         mProgressBar.setProgress(0);
+                        button.setVisibility(View.VISIBLE);
                     }
                 }.start();
             }

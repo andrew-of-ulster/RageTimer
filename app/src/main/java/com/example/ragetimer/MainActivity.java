@@ -15,8 +15,10 @@ public class MainActivity extends AppCompatActivity {
 
     public int counter;
     ImageButton button;
-    TextView minsRemaining;
-    TextView secsRemaining;
+    TextView minsRemainingTens;
+    TextView secsRemainingTens;
+    TextView minsRemainingOnes;
+    TextView secsRemainingOnes;
     TextView colon;
     ProgressBar mProgressBar;
 
@@ -29,16 +31,20 @@ public class MainActivity extends AppCompatActivity {
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
         button= (ImageButton) findViewById(R.id.button);
-        minsRemaining= (TextView) findViewById(R.id.textMins);
-        secsRemaining= (TextView) findViewById(R.id.textSecs);
+        minsRemainingTens= (TextView) findViewById(R.id.textMinTens);
+        secsRemainingTens= (TextView) findViewById(R.id.textSecTens);
+        minsRemainingOnes= (TextView) findViewById(R.id.textMinOnes);
+        secsRemainingOnes= (TextView) findViewById(R.id.textSecOnes);
         colon= (TextView) findViewById(R.id.colon);
 
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v) {
-                minsRemaining.setTextColor(0xAA008000);
-                secsRemaining.setTextColor(0xAA008000);
+                minsRemainingTens.setTextColor(0xAA008000);
+                secsRemainingTens.setTextColor(0xAA008000);
+                minsRemainingOnes.setTextColor(0xAA008000);
+                secsRemainingOnes.setTextColor(0xAA008000);
                 colon.setTextColor(0xAA008000);
                 mProgressBar.setProgressDrawable(getResources().getDrawable(R.drawable.custom_progressbar));
 
@@ -54,23 +60,36 @@ public class MainActivity extends AppCompatActivity {
                         int remainingSeconds = totalSecs - counter;
                         mProgressBar.setProgress(remainingSeconds);
 
+
                         int remainingMins = remainingSeconds/60;
-                        String displayNum = String.valueOf(remainingMins);
-                        if(remainingMins<10){
-                            displayNum = "0"+displayNum;
+                        int remainingMinsTens = remainingMins/10;
+                        String displayNum = String.valueOf(remainingMinsTens);
+                        if(remainingMinsTens<1){
+                            displayNum = "0";
                         }
-                        minsRemaining.setText(displayNum);
+                        minsRemainingTens.setText(displayNum);
+
+                        int remainingMinsOnes = remainingMins - (remainingMinsTens*10);
+                        displayNum = String.valueOf(remainingMinsOnes);
+                        minsRemainingOnes.setText(displayNum);
 
                         int remainderOfSeconds = remainingSeconds-(remainingMins*60);
-                        displayNum = String.valueOf(remainderOfSeconds);
+                        int remainderOfSecondsTens = remainderOfSeconds/10;
+                        displayNum = String.valueOf(remainderOfSecondsTens);
                         if(remainderOfSeconds<10) {
-                            displayNum = "0" + displayNum;
+                            displayNum = "0";
                         }
-                        secsRemaining.setText(displayNum);
+                        secsRemainingTens.setText(displayNum);
+
+                        int remainderOfSecondsOnes = remainderOfSeconds - (remainderOfSecondsTens*10);
+                        displayNum = String.valueOf(remainderOfSecondsOnes);
+                        secsRemainingOnes.setText(displayNum);
 
                         if(remainingSeconds<60){
-                            minsRemaining.setTextColor(0xAAe4000f);
-                            secsRemaining.setTextColor(0xAAe4000f);
+                            minsRemainingTens.setTextColor(0xAAe4000f);
+                            secsRemainingTens.setTextColor(0xAAe4000f);
+                            minsRemainingOnes.setTextColor(0xAAe4000f);
+                            secsRemainingOnes.setTextColor(0xAAe4000f);
                             colon.setTextColor(0xAAe4000f);
                             mProgressBar.setProgressDrawable(getResources().getDrawable(R.drawable.red_custom_progressbar));
                         }
@@ -78,8 +97,10 @@ public class MainActivity extends AppCompatActivity {
                         counter++;
                     }
                     public  void onFinish(){
-                        minsRemaining.setText("£");
-                        secsRemaining.setText("£");
+                        minsRemainingTens.setText("£");
+                        secsRemainingTens.setText("£");
+                        minsRemainingOnes.setText("£");
+                        secsRemainingOnes.setText("£");
                         mProgressBar.setProgress(0);
                         button.setVisibility(View.VISIBLE);
                     }

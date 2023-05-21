@@ -7,13 +7,14 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     public int counter;
-    Button button;
+    ImageButton button;
     TextView minsRemaining;
     TextView secsRemaining;
     TextView colon;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
-        button= (Button) findViewById(R.id.button);
+        button= (ImageButton) findViewById(R.id.button);
         minsRemaining= (TextView) findViewById(R.id.textMins);
         secsRemaining= (TextView) findViewById(R.id.textSecs);
         colon= (TextView) findViewById(R.id.colon);

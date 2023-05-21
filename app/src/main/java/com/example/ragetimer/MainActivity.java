@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     public int counter;
     Button button;
     TextView textView;
+    TextClock textClock;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         button= (Button) findViewById(R.id.button);
         textView= (TextView) findViewById(R.id.textView);
+
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override

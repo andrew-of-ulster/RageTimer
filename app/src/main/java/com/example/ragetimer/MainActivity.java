@@ -2,6 +2,7 @@ package com.example.ragetimer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 counter=0;
                 int totalTime=1800000;
-                 totalTime=90000;
+                 totalTime=61000;
                 int interval=1000;
                 int totalSecs = totalTime/interval;
                 mProgressBar.setMax(totalSecs);
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                             minsRemaining.setTextColor(0xAAe4000f);
                             secsRemaining.setTextColor(0xAAe4000f);
                             colon.setTextColor(0xAAe4000f);
+                            mProgressBar.setProgressDrawable(getResources().getDrawable(R.drawable.red_custom_progressbar));
                         }
 
                         counter++;

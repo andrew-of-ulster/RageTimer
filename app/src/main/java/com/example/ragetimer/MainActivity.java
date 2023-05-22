@@ -32,9 +32,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
-        mProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
+        getSupportActionBar().hide();
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
         button= (Button) findViewById(R.id.button);
         minsRemainingTens= (TextView) findViewById(R.id.textMinTens);
         secsRemainingTens= (TextView) findViewById(R.id.textSecTens);
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         colon.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
         hiddenMins.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
         hiddenSecs.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
-        //button.setMaxHeight((int)buttonTextSize);
+        button.setMinWidth((int)(buttonTextSize*3));
         button.setTextSize(TypedValue.COMPLEX_UNIT_PX, buttonTextSize);
         button.setOnClickListener(new View.OnClickListener()
         {

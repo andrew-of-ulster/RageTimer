@@ -17,7 +17,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     public int counter;
-    ImageButton button;
+    Button button;
     TextView minsRemainingTens;
     TextView secsRemainingTens;
     TextView minsRemainingOnes;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar2);
 
-        button= (ImageButton) findViewById(R.id.button);
+        button= (Button) findViewById(R.id.button);
         minsRemainingTens= (TextView) findViewById(R.id.textMinTens);
         secsRemainingTens= (TextView) findViewById(R.id.textSecTens);
         minsRemainingOnes= (TextView) findViewById(R.id.textMinOnes);
@@ -46,10 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
-        Log.w("Details",width+"");
         float mySize = width/2;
+        float buttonTextSize = width/4;
+
         minsRemainingTens.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
         secsRemainingTens.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
         minsRemainingOnes.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
         colon.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
         hiddenMins.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
         hiddenSecs.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
-
+        //button.setMaxHeight((int)buttonTextSize);
+        button.setTextSize(TypedValue.COMPLEX_UNIT_PX, buttonTextSize);
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 button.setVisibility(View.INVISIBLE);
                 counter=0;
                 int totalTime=1800000;
-                 totalTime=69000;
+                 //totalTime=69000;
                 int interval=1000;
                 int totalSecs = totalTime/interval;
                 mProgressBar.setMax(totalSecs);

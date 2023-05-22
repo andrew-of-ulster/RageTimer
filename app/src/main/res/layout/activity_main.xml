@@ -3,25 +3,25 @@
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#232b2b"
+    android:gravity="center"
+    android:orientation="vertical"
+    app:barrierMargin="10dp"
     tools:context=".MainActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/textMinOnes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="?"
+            android:text="0"
             android:textColor="#008000"
             android:textSize="200dp"
             app:fontFamily="@font/digital"
@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="?"
+            android:text="3"
             android:textColor="#008000"
             android:textSize="200dp"
             app:fontFamily="@font/digital"
@@ -75,9 +75,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="?"
-            android:textSize="200dp"
+            android:text="0"
             android:textColor="#008000"
+            android:textSize="200dp"
             app:fontFamily="@font/digital"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toLeftOf="@id/textSecOnes2"
@@ -88,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="?"
+            android:text="0"
             android:textColor="#008000"
             android:textSize="200dp"
             app:fontFamily="@font/digital"
@@ -112,29 +112,29 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <ImageButton
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:background="@null"
-            android:src="@drawable/start_png"/>
-
-
     <ProgressBar
         android:id="@+id/progressBar2"
         style="@android:style/Widget.ProgressBar.Horizontal"
-        android:progressDrawable="@drawable/custom_progressbar"
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:gravity="center" />
+        android:gravity="center"
+        android:progressDrawable="@drawable/custom_progressbar" />
 
-
-
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:textColor="#F5F5F5"
+        android:textSize="100dp"
+        app:backgroundTint="#000080"
+        app:cornerRadius="10dp"
+        app:fontFamily="@font/digital"
+        app:strokeColor="#000000"
+        app:strokeWidth="6dp" />
 
 </LinearLayout>

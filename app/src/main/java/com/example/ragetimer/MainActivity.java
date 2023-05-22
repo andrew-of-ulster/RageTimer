@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -19,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     TextView secsRemainingTens;
     TextView minsRemainingOnes;
     TextView secsRemainingOnes;
+    TextView hiddenMins;
+    TextView hiddenSecs;
     TextView colon;
     ProgressBar mProgressBar;
 
@@ -36,6 +41,22 @@ public class MainActivity extends AppCompatActivity {
         minsRemainingOnes= (TextView) findViewById(R.id.textMinOnes);
         secsRemainingOnes= (TextView) findViewById(R.id.textSecOnes);
         colon= (TextView) findViewById(R.id.colon);
+        hiddenMins = (TextView) findViewById(R.id.textMinOnes2);
+        hiddenSecs = (TextView) findViewById(R.id.textSecOnes2);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+        Log.w("Details",width+"");
+        float mySize = width/2;
+        minsRemainingTens.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
+        secsRemainingTens.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
+        minsRemainingOnes.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
+        secsRemainingOnes.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
+        colon.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
+        hiddenMins.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
+        hiddenSecs.setTextSize(TypedValue.COMPLEX_UNIT_PX, mySize);
 
         button.setOnClickListener(new View.OnClickListener()
         {

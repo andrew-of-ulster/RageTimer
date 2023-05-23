@@ -123,10 +123,10 @@ public class MainActivity extends AppCompatActivity {
                         counter++;
                     }
                     public  void onFinish(){
-                        minsRemainingTens.setText("£");
-                        secsRemainingTens.setText("£");
-                        minsRemainingOnes.setText("£");
-                        secsRemainingOnes.setText("£");
+                        minsRemainingTens.setText("0");
+                        secsRemainingTens.setText("0");
+                        minsRemainingOnes.setText("0");
+                        secsRemainingOnes.setText("0");
                         mProgressBar.setProgress(0);
                         button.setVisibility(View.VISIBLE);
                     }
